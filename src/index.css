@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Dawn Bloom Wellness Palette - Light Mode */
+    --background: 30 25% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Warm Coral/Peach (Dawn) */
+    --primary: 16 85% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Lavender (Calm) */
+    --secondary: 270 30% 92%;
+    --secondary-foreground: 270 40% 30%;
+
+    /* Muted - Warm Gray */
+    --muted: 30 15% 94%;
+    --muted-foreground: 222 20% 45%;
+
+    /* Accent - Golden Amber (Bloom) */
+    --accent: 38 92% 60%;
+    --accent-foreground: 38 92% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 90%;
+    --input: 30 20% 90%;
+    --ring: 16 85% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom Dawn Bloom Variables */
+    --dawn-peach: 16 85% 65%;
+    --dawn-coral: 10 75% 58%;
+    --dawn-amber: 38 92% 60%;
+    --dawn-lavender: 270 50% 75%;
+    --dawn-sage: 140 30% 70%;
+    --dawn-cream: 40 40% 96%;
+    
+    /* Gradients */
+    --gradient-dawn: linear-gradient(135deg, hsl(16 85% 65%) 0%, hsl(38 92% 60%) 50%, hsl(270 50% 75%) 100%);
+    --gradient-sunrise: linear-gradient(180deg, hsl(40 40% 96%) 0%, hsl(16 85% 90%) 100%);
+    --gradient-calm: linear-gradient(135deg, hsl(270 30% 92%) 0%, hsl(200 30% 95%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(30 25% 98%) 0%, hsl(16 40% 95%) 50%, hsl(270 30% 96%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(16 85% 65% / 0.15);
+    --shadow-elevated: 0 10px 40px -10px hsl(222 47% 11% / 0.1);
+    --shadow-card: 0 2px 12px -2px hsl(222 47% 11% / 0.08);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 30 20% 95%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 16 85% 65%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 270 20% 20%;
+    --secondary-foreground: 270 30% 85%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 30 15% 65%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 38 92% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 16 85% 65%;
+
+    --dawn-peach: 16 75% 55%;
+    --dawn-coral: 10 65% 50%;
+    --dawn-amber: 38 85% 55%;
+    --dawn-lavender: 270 40% 60%;
+    --dawn-sage: 140 25% 55%;
+    --dawn-cream: 222 30% 15%;
+    
+    --gradient-dawn: linear-gradient(135deg, hsl(16 75% 55%) 0%, hsl(38 85% 55%) 50%, hsl(270 40% 60%) 100%);
+    --gradient-sunrise: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 40% 15%) 100%);
+    --gradient-calm: linear-gradient(135deg, hsl(270 20% 20%) 0%, hsl(222 30% 15%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 40% 12%) 50%, hsl(270 20% 15%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.2);
+
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 30 20% 90%;
+    --sidebar-primary: 16 85% 65%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 30% 15%;
+    --sidebar-accent-foreground: 30 20% 90%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 16 85% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .gradient-dawn {
+    background: var(--gradient-dawn);
+  }
+  
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+  
+  .gradient-calm {
+    background: var(--gradient-calm);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-dawn);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulseSoft 4s ease-in-out infinite;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
